@@ -20,8 +20,7 @@ function App() {
   return (
     <>
       <main id="quote-box">
-        <Quote list={quoteList} num={ranNum}/>
-        <button id="new-quote" onClick={changeQuote}>New Quote</button>
+        <Quote list={quoteList} num={ranNum} clickEvent={changeQuote}/>
       </main>
     </>
   )

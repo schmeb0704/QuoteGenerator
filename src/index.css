@@ -2,6 +2,7 @@
 
 *{
   font-family: Poppins, sans-serif;
+  box-sizing: border-box;
 }
 
 main{
@@ -9,7 +10,7 @@ main{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px
+  padding: 10px;
   
 }
 
@@ -30,8 +31,38 @@ main{
   text-align: center;
   font-size: 25px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
+#new-quote{
+  border: none;
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.wrapper{
+  display: grid;
+  grid-template-rows: 1fr 80px;
+  padding: 5px;
+}
+
+.quote-part{
+  display: flex;
+  flex-direction: column;
+}
+
+#author{
+  align-self: flex-end;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 
