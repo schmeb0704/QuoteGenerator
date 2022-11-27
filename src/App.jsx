@@ -3,7 +3,7 @@ import Quote from './components/quoteBox'
 
 function App() {
   const [quoteList, setQuoteList] = React.useState([])
-  const [ranNum, setRanNum] = React.useState(Math.floor(Math.random() * quoteList.length))
+  
 
   React.useEffect(() => {
     fetch("https://type.fit/api/quotes")
@@ -11,14 +11,18 @@ function App() {
     .then(data => setQuoteList(data))
   }, [])
 
+  const [ranNum, setRanNum] = React.useState(Math.floor(Math.random() * quoteList.length))
+
   function changeQuote(){
     setRanNum(Math.floor(Math.random() * quoteList.length))
   }
 
   return (
     <>
-      <Quote list={quoteList} num={ranNum}/>
-      <button onClick={changeQuote}>New Quote</button>
+      <main id="quote-box">
+        <Quote list={quoteList} num={ranNum}/>
+        <button id="new-quote" onClick={changeQuote}>New Quote</button>
+      </main>
     </>
   )
 }

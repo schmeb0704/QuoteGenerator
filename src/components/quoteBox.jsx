@@ -5,8 +5,8 @@ export default (props) =>{
   const newList = quoteList.map(quote => {
     return( 
     <>
-      <h1 id={Date.now()} className="quote-text">{quote.text}</h1>
-      <p className="author">{quote.author}</p>
+      <h1 key={Date.now()} id="text" className="quote-text"><span className="material-symbols-outlined">format_quote</span>{quote.text}</h1>
+      <p id="author">{quote.author}</p>
     </>)
     
   })
