@@ -8,7 +8,7 @@ export default (props) =>{
     <>
       <h1 key={Date.now()} id="text" className="quote-text"><span className="material-symbols-outlined">format_quote</span>{quote.text}</h1>
       <p id="author">{quote.author}</p>
-      <a id="tweet-quote" href={href}><i className='bx bxl-twitter'></i></a>
+      <button className="tweet-btn"><a id="tweet-quote" href={href} target="_blank"><i className='bx bxl-twitter'></i></a></button>
     </>)
     
   })
