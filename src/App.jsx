@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import Quote from './components/quoteBox'
 
 function App() {
   return (
     <>
-      <div>Hello</div>
+      <Quote />
     </>
   )
 }
