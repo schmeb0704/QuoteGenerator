@@ -1,27 +1,30 @@
 import React from "react"
 
 export default (props) =>{
-  const [quoteList, setQuoteList] = React.useState([])
-  let ranNum = Math.floor(Math.random() * quoteList.length)
-
-  React.useEffect(() => {
-    fetch("https://type.fit/api/quotes")
-    .then(response => response.json())
-    .then(data => setQuoteList(data))
-  }, [])
-
+  const quoteList = props.list
   const newList = quoteList.map(quote => {
+    const href = quote.author !== null ? `https://twitter.com/intent/tweet?text="${quote.text}" - ${quote.author}` : `https://twitter.com/intent/tweet?text="${quote.text}" - Unknown`
+    const authorText = quote.author !== null ? `- ${quote.author}`: ``
     return( 
     <>
-      <h1 id={Date.now()} className="quote-text">{quote.text}</h1>
-      <p className="author">{quote.author}</p>
+      <section className="quote-part">
+        <h1 key={Date.now()} id="text" className="quote-text"><span className="material-symbols-outlined">format_quote</span>{quote.text}</h1>
+        <p id="author">{authorText}</p>
+      </section>
+      <section className="buttons">
+        <button className="tweet-btn"><a id="tweet-quote" href={href} target="_blank"><i className='bx bxl-twitter'></i></a></button>
+        <button id="new-quote" onClick={props.clickEvent}>New Quote</button>
+      </section>
     </>)
     
   })
+  const toDisplay = newList[props.num]
+
+  
 
   return(
-    <div>
-      {newList[ranNum]}
+    <div className="wrapper">
+      {toDisplay}
     </div>
   )
 }
