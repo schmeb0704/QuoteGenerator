@@ -1,15 +1,7 @@
 import React from "react"
 
 export default (props) =>{
-  const [quoteList, setQuoteList] = React.useState([])
-  let ranNum = Math.floor(Math.random() * quoteList.length)
-
-  React.useEffect(() => {
-    fetch("https://type.fit/api/quotes")
-    .then(response => response.json())
-    .then(data => setQuoteList(data))
-  }, [])
-
+  const quoteList = props.list
   const newList = quoteList.map(quote => {
     return( 
     <>
@@ -21,7 +13,7 @@ export default (props) =>{
 
   return(
     <div>
-      {newList[ranNum]}
+      {newList[props.num]}
     </div>
   )
 }
