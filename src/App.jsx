@@ -20,8 +20,11 @@ function App() {
     const randomColor = `rgb(${r}, ${g}, ${b})`
     const root = document.querySelector(".background")
     const box = document.querySelector("#quote-box")
+    const tweetBtn = document.querySelector(".tweet-btn")
     root.style.backgroundColor = randomColor
     box.style.color = randomColor
+    tweetBtn.style.backgroundColor = randomColor
+
   }
 
 
